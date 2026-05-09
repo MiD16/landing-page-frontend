@@ -78,9 +78,12 @@ const WhoWeAreSection = () => {
         <motion.div variants={itemVariants} className="relative w-full">
           <div className="overflow-hidden rounded-lg shadow-2xl">
             <img
-              src={companyInfo?.who_we_are_image || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=1000&fit=crop"}
+              src={companyInfo?.who_we_are_image || "/images/who-we-are.jpg"}
               alt="Architecture team working"
               className="w-full h-auto object-cover"
+              onError={(e) => {
+                e.currentTarget.src = "/images/who-we-are.jpg";
+              }}
             />
           </div>
           <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-accent/10 rounded-lg -z-10"></div>

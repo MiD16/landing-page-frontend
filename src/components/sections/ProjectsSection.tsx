@@ -69,6 +69,7 @@ const ProjectsSection = () => {
             <motion.div key={project.id} variants={itemVariants}>
               <Card
                 image={project.image}
+                fallbackImage={`/images/projects/${project.id}.jpg`}
                 title={project.title}
                 description={project.description}
               />

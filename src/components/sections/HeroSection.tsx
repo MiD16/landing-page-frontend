@@ -60,9 +60,12 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={companyInfo?.hero_image || "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&h=1080&fit=crop"}
+          src={companyInfo?.hero_image || "/images/hero.jpeg"}
           alt="Modern architecture building"
           className="w-full h-full object-cover"
+          onError={(e) => {
+            e.currentTarget.src = "/images/hero.jpeg";
+          }}
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-primary/80 to-primary/50"></div>

@@ -75,9 +75,12 @@ const ClientsSection = () => {
                 className="flex items-center justify-center mx-6 p-4"
               >
                 <img
-                  src={client.logo}
+                  src={client.logo || `/images/${client.id}.png`}
                   alt={client.name}
                   className="max-h-24 w-auto object-contain opacity-70 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                  onError={(e) => {
+                    e.currentTarget.src = `/images/clients/${client.id}.png`;
+                  }}
                 />
               </div>
             ))}
